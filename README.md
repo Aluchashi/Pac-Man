@@ -1,16 +1,5 @@
-# 👻 PAC-MAN Flutter
-
-A classic Pac-Man game built with Flutter.
-
-<div align="center">
-
-| Gameplay | Game Over |
-|----------|-----------|
-| <img src="screenshots/screenshot_gameplay.png" width="220"/> | <img src="screenshots/screenshot_gameover.png" width="220"/> |
-
-</div>
-
----
+# Pacman 2D Casual Game
+An offline-based classic Pac-Man game built with Flutter.
 
 ## 🎮 How to Play
 
@@ -29,15 +18,14 @@ A classic Pac-Man game built with Flutter.
 
 ---
 
-## 🚀 Run the App
+## 📥 Install
 
-```bash
-git clone https://github.com/your-username/pacman_flutter.git
-cd pacman_flutter
-flutter pub get
-flutter run
-```
+Go to Releases
+Download the latest app-release.apk
+Open the APK on your Android phone
+Done — enjoy the game! 🎮
 
+Note: Allow "Install from unknown sources" if prompted
 ---
 
 Made with ❤️ using Flutter
