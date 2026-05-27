@@ -1,7 +1,6 @@
 <div align="center">
 
-# 𝙋𝘼𝘾-𝙈𝘼𝙉
-
+PAC-MAN
 ### · · · · · ᗧ · · · · · 👻 · · · · ·
 
 **Offline 2D Classic Pac-Man — Built with Flutter**
@@ -41,8 +40,8 @@
 
 ## 📥 Install
 
-1. Go to [Releases](https://github.com/your-username/pacman_flutter/releases)
-2. Download the latest `app-release.apk`
+1. Go to [Releases](https://github.com/Aluchashi/Pac-Man/releases/tag/v1.0.0)
+2. Download the latest `android.apk`
 3. Open the APK on your Android phone
 4. Done — enjoy the game! 🎮
 
