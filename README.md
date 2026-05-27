@@ -8,10 +8,11 @@
 ██║     ██║  ██║╚██████╗       ██║ ╚═╝ ██║██║  ██║██║ ╚███║
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝       ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚══╝
  
-*An offline-based classic 2D Pac-Man game with 4 levels of challenge*
+[An offline-based classic 2D Pac-Man game with 4 levels of challenge]
 ```
--
+</div>
 
+---
 ## 🎮 How to Play
 
 - Eat all the **yellow dots** to level up
