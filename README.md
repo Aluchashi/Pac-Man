@@ -9,7 +9,8 @@
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝       ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚══╝
  
 *An offline-based classic 2D Pac-Man game with 4 levels of challenge*
-```-
+```
+-
 
 ## 🎮 How to Play
 
