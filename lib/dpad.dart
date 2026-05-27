@@ -114,8 +114,6 @@ class _ArcadeButton extends StatefulWidget {
 
 class _ArcadeButtonState extends State<_ArcadeButton> {
   bool _pressed = false;
-
-  // How much the button "sinks" on press
   static const double _sinkAmount = 4.0;
 
   @override

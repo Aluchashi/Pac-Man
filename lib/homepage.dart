@@ -27,22 +27,12 @@ class _HomePageState extends State<HomePage> {
   int level = 1;
   bool isGameOver = false;
 
-  // ── সব 4টা ghost এর fixed starting positions ──
-  // 3+ valid move আছে এমন cells বেছে নেওয়া হয়েছে
-  final List<int> _allGhostStartPositions = [
-    26, // row 2 — 3 valid moves
-    28, // row 2 — 3 valid moves
-    58, // row 5 — 3 valid moves
-    62, // row 5 — 3 valid moves
-  ];
+  final List<int> _allGhostStartPositions = [26, 28, 58, 62];
 
-  // ── level অনুযায়ী কতটা ghost active সেটা বের করে ──
-  // level 1 → 1 ghost, level 2 → 2, level 3 → 3, level 4+ → 4
   int get _activeGhostCount => level.clamp(1, 4);
 
-  // ── active ghost positions (level অনুযায়ী) ──
   late List<int> ghosts;
-  late List<int> _ghostLastPositions; // পিছনে যাওয়া বন্ধ করতে
+  late List<int> _ghostLastPositions;
 
   Timer? ghostTimer;
 
@@ -147,7 +137,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _initFood();
-    _initGhosts(); // level 1 → 1 ghost দিয়ে শুরু
+    _initGhosts();
     _startGhostMovement();
   }
 
@@ -158,12 +148,11 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  // ── level অনুযায়ী ghost list বানাও ──
   void _initGhosts() {
     ghosts = List<int>.from(
       _allGhostStartPositions.sublist(0, _activeGhostCount),
     );
-    // শুরুতে lastPosition = current position (কোনো preferred direction নেই)
+
     _ghostLastPositions = List<int>.from(ghosts);
   }
 
@@ -178,7 +167,7 @@ class _HomePageState extends State<HomePage> {
 
   void _startGhostMovement() {
     ghostTimer?.cancel();
-    // level বাড়লে ghost একটু দ্রুত হবে (400ms → 300ms → 250ms → 200ms)
+
     final speeds = [350, 300, 250, 200];
     final speed = speeds[(level - 1).clamp(0, 3)];
 
@@ -201,13 +190,10 @@ class _HomePageState extends State<HomePage> {
           current + numberInrow,
         ];
 
-        // valid moves — barrier নয়, bound এর ভেতরে
         List<int> validMoves = possibleMoves.where((pos) {
           return pos >= 0 && pos < numberofsq && !barriers.contains(pos);
         }).toList();
 
-        // আগের position এ ফিরে যাওয়া বন্ধ করো
-        // (যদি অন্য কোনো valid move থাকে)
         final noBacktrack = validMoves.where((pos) => pos != last).toList();
         final moveCandidates = noBacktrack.isNotEmpty
             ? noBacktrack
@@ -215,7 +201,7 @@ class _HomePageState extends State<HomePage> {
 
         if (moveCandidates.isNotEmpty) {
           int nextPos;
-          // 60% chance player এর দিকে যাবে, 40% random
+
           if (random.nextDouble() < 0.6) {
             moveCandidates.sort((a, b) {
               final distA =
@@ -231,7 +217,7 @@ class _HomePageState extends State<HomePage> {
             nextPos = moveCandidates[random.nextInt(moveCandidates.length)];
           }
 
-          _ghostLastPositions[i] = current; // আগের position save করো
+          _ghostLastPositions[i] = current;
           ghosts[i] = nextPos;
         }
 
@@ -296,7 +282,7 @@ class _HomePageState extends State<HomePage> {
       player = numberInrow * 14 + 1;
       direction = 'right';
       _initFood();
-      _initGhosts(); // level 1 → 1 ghost দিয়ে reset
+      _initGhosts();
     });
     _startGhostMovement();
   }
@@ -374,12 +360,11 @@ class _HomePageState extends State<HomePage> {
           score++;
           if (score > max) max = score;
 
-          // ── সব food শেষ → level up ──
           if (food.isEmpty) {
             level++;
             _initFood();
-            _initGhosts(); // নতুন level এ একটা নতুন ghost যোগ হবে
-            _startGhostMovement(); // নতুন speed এ timer restart
+            _initGhosts();
+            _startGhostMovement();
           }
         }
 
@@ -582,10 +567,7 @@ class _HomePageState extends State<HomePage> {
                         child: Container(
                           padding: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.pink,
-                              width: 2,
-                            ),
+                            border: Border.all(color: Colors.pink, width: 2),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyGhost extends StatelessWidget {
-  final int ghostNumber; // 1, 2, 3, বা 4
+  final int ghostNumber;
 
   const MyGhost({super.key, required this.ghostNumber});
 
