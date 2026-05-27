@@ -8,22 +8,8 @@
 ██║     ██║  ██║╚██████╗       ██║ ╚═╝ ██║██║  ██║██║ ╚███║
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝       ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚══╝
  
-            *An offline-based classic 2D Pac-Man game with 4 levels of challenge*
-```
-
-</div>
-
----
-
-<div align="center">
-
-| Gameplay | Game Over |
-|----------|-----------|
-| <img src="screenshots/screenshot_gameplay.png" width="220"/> | <img src="screenshots/screenshot_gameover.png" width="220"/> |
-
-</div>
-
----
+*An offline-based classic 2D Pac-Man game with 4 levels of challenge*
+```-
 
 ## 🎮 How to Play
 
